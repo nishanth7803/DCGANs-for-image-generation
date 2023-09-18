@@ -1,2 +1,2 @@
-# DCGANs-for-image-generation
-A Deep Convolutional Generative Adversarial Network, developed through the research paper - "UNSUPERVISED REPRESENTATION LEARNING WITH DEEP CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS" to generate images of flowers, and faces.
+# DCGAN and WGAN-for-image-generation
+Generative Adversarial Networks, developed through the research papers of DCGAN and WGAN with GRADIENT PENALTY to generate human faces.
