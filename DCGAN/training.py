@@ -82,8 +82,8 @@ for epoch in range(num_epochs):
 
         if (cur_step % display_step == 0 and cur_step > 0):
             print(f"Epoch {epoch}, step {cur_step}: Generator loss: {mean_generator_loss}, discriminator loss: {mean_discriminator_loss}")
-            show_tensor_images(fake_images)
-            show_tensor_images(real_images)
+            display_images(fake_images)
+            display_images(real_images)
             mean_generator_loss = 0
             mean_discriminator_loss = 0
           
