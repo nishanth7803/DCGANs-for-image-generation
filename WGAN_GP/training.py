@@ -53,7 +53,7 @@ optimizer_gen = optim.Adam(generator.parameters(), lr=lr, betas=(0.0, 0.9))
 optimizer_critic = optim.Adam(critic.parameters(), lr=lr, betas=(0.0, 0.9))
 
 step = 0
-fixed_noise = torch.randn(32, noise_dim, 1, 1).to(device)
+fixed_noise = torch.randn(25, noise_dim, 1, 1).to(device)
 
 for epoch in range(n_epochs):
     for batch_idx, (real, _) in enumerate(tqdm(dataloader)):
@@ -66,9 +66,7 @@ for epoch in range(n_epochs):
             critic_real = critic(real).reshape(-1)
             critic_fake = critic(fake).reshape(-1)
             gp = gradient_penalty(critic, real, fake, device=device)
-            loss_critic = (
-                -(torch.mean(critic_real)-torch.mean(critic_fake))+lambda_gp*gp
-            )
+            loss_critic = (-(torch.mean(critic_real)-torch.mean(critic_fake))+lambda_gp*gp)
             critic.zero_grad()
             loss_critic.backward(retain_graph=True)
             optimizer_critic.step()
@@ -85,6 +83,6 @@ for epoch in range(n_epochs):
                   Loss D: {loss_critic:.4f}, loss G: {loss_gen:.4f}"
             )
             fake = generator(fixed_noise)
-            show_tensor_images(fake)
-            show_tensor_images(real)
+            display_images(fake)
+            display_images(real)
             step += 1
