@@ -22,9 +22,9 @@ lr = 0.0002
 momentum = 0.5
 
 transform = transforms.Compose([
-    transforms.Resize((64, 64)),  # Resize images to 64x64
-    transforms.ToTensor(),   # Convert to tensor
-    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])  # Normalize to range [-1, 1]
+    transforms.Resize((64, 64)), 
+    transforms.ToTensor(),   
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
 ])
 
 root_dir = '/kaggle/input/celeba-dataset'
@@ -56,7 +56,7 @@ for epoch in range(num_epochs):
         batch_size = real_images.size(0)
 
         discriminator.zero_grad()
-        label = torch.full((batch_size,), 1.0, device=device)  # Real labels
+        label = torch.full((batch_size,), 1.0, device=device)  
         output_real = discriminator(real_images).view(-1)
         errD_real = criterion(output_real, label)
         errD_real.backward()
