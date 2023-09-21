@@ -36,6 +36,9 @@ discriminator = Discriminator(n_filter_disc, color_channels).to(device)
 
 generator = nn.DataParallel(generator)
 discriminator = nn.DataParallel(discriminator)
+
+initialize_weights(generator)
+initialize_weights(critic)
 generator.train()
 critic.train()
 
