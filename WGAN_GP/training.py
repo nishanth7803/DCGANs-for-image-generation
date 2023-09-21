@@ -60,7 +60,7 @@ for epoch in range(n_epochs):
         real = real.to(device)
         cur_batch_size = real.shape[0]
 
-        for _ in range(critic_iterations):
+        for i in range(critic_iterations):
             noise = torch.randn(cur_batch_size, noise_dim, 1, 1, device=device)
             fake = generator(noise)
             critic_real = critic(real).reshape(-1)
