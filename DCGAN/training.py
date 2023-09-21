@@ -5,6 +5,8 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 import matplotlib.pyplot as plt
+from model import Generator, Discriminator
+from utils import view_tensor_images
 from scipy import linalg
 import numpy as np
 import torchvision.models as models
