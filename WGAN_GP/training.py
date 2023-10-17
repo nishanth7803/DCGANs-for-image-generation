@@ -8,7 +8,7 @@ from torchvision.utils import make_grid
 import matplotlib.pyplot as plt
 from torchvision.datasets import ImageFolder
 from model import Generator, Critic
-from utils import gradient_penalty, initialize_weights, show_tensor_images
+from utils import gradient_penalty, initialize_weights, display_images
 
 if torch.cuda.device_count() > 1:
     device = torch.device("cuda:0")
