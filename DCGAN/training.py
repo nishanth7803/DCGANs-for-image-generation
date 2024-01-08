@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+import torch.optim as optim
 from tqdm.auto import tqdm
 from torchvision import transforms
 from torch.utils.data import DataLoader
