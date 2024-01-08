@@ -1,5 +1,7 @@
 import torch
+import torchvision
 from torch import nn
+import torch.optim as optim
 from tqdm.auto import tqdm
 from torchvision import transforms
 from torchvision.utils import make_grid
