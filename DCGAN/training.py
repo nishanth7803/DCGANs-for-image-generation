@@ -1,4 +1,5 @@
 import torch
+import torchvision
 from torch import nn
 import torch.optim as optim
 from tqdm.auto import tqdm
